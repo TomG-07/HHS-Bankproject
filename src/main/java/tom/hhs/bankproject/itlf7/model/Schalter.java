@@ -6,6 +6,7 @@ public class Schalter {
 
     public static void main(String[] args) {
 
+
         Konto alex = new Konto();
         Konto bernd = new Konto();
         Konto anna = alex;
