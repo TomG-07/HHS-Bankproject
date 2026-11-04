@@ -1,0 +1,17 @@
+┌──────────────────────────────────────┐
+│                 Konto                │
+├──────────────────────────────────────┤
+│ - dispo: double                      │
+│ - saldo: double                      │
+│                                      │
+├──────────────────────────────────────┤
+│ + getSaldo(): double                 │
+│ + getDispo(): double                 │
+│                                      │
+│ + einzahlen(double): void            │
+│ + abheben(double): boolean           │
+│ + einzahlen(double): void            │
+│ + ueberweisen(double, Konto): boolean│
+│ + show(): void                       │
+│ + setDispo (): void                  │
+└──────────────────────────────────────┘

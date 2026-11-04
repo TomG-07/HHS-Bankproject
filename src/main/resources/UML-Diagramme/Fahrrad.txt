@@ -1,0 +1,18 @@
+               Fahrrad
+──────────────────────────────────────
+- marke: String
+- geschwindigkeit: double
+- gang: int
+- reifengroesse: double
+──────────────────────────────────────
++ getMarke(): String
++ setMarke(marke: String): void
+
++ getGeschwindigkeit(): double
++ beschleunigen(wert: double): void
++ bremsen(wert: double): void
+
++ getGang(): int
++ schalten(gang: int): void
++ getReifengroesse(): double
+─────────────────────────────────────
