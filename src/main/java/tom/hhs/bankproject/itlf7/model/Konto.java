@@ -6,7 +6,7 @@ public class Konto {
     private double dispo;
 
     public boolean abheben(double betrag) {
-        if (this.saldo + this.dispo >= betrag) {
+        if (this.saldo + this.dispo >= betrag && betrag > 0) {
             this.saldo -= betrag;
             return true;
         }
@@ -14,19 +14,20 @@ public class Konto {
     }
 
     public void einzahlen(double betrag) {
-        this.saldo += betrag;
+        if (betrag > 0) {
+            this.saldo += betrag;
+        }
     }
 
     public boolean ueberweisen(double betrag, Konto zielKonto) {
-        if (this.saldo + this.dispo >= betrag) {
-            this.saldo -= betrag;
-            zielKonto.saldo +=betrag;
+        if (this.abheben(betrag)) {
+           zielKonto.einzahlen(betrag);
             return true;
         }
         return false;
     }
 
-    public void show(){
+    public void show() {
         System.out.println("Saldo: " + this.saldo + " Dispo: " + this.dispo);
     }
 
