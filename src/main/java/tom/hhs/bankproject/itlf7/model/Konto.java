@@ -3,28 +3,36 @@ package tom.hhs.bankproject.itlf7.model;
 public class Konto {
 
     private double saldo;
-    private int kontonummer;
+    private double dispo;
 
-    public Konto() {
-        this.saldo = saldo;
-        this.kontonummer = (int) (Math.random() * 100000);
+    public boolean abheben(double betrag) {
+        if (this.saldo + this.dispo >= betrag) {
+            this.saldo -= betrag;
+            return true;
+        }
+        return false;
     }
 
-    public double getSaldo() {
-        return saldo;
+    public void einzahlen(double betrag) {
+        this.saldo += betrag;
     }
 
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
+    public boolean ueberweisen(double betrag, Konto zielKonto) {
+        if (this.saldo + this.dispo >= betrag) {
+            this.saldo -= betrag;
+            zielKonto.saldo +=betrag;
+            return true;
+        }
+        return false;
     }
 
-    public int getKontonummer() {
-        return kontonummer;
+    public void show(){
+        System.out.println("Saldo: " + this.saldo + " Dispo: " + this.dispo);
     }
 
-    public void setKontonummer(int kontonummer) {
-        this.kontonummer = kontonummer;
+    public void setDispo(double dispo) {
+        if (dispo > 0) {
+            this.dispo = dispo;
+        }
     }
-
-
 }

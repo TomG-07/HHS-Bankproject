@@ -9,9 +9,6 @@ public class Schalter {
 
         Konto alex = new Konto();
         Konto bernd = new Konto();
-        Konto anna = alex;
-
-        System.out.println(anna.equals(alex));
 
         // alex.setSaldo(200d);
         // bernd.setSaldo(alex.getSaldo()*2);
@@ -29,7 +26,14 @@ public class Schalter {
         //     System.out.println("Beide haben gleich viel Geld");
         // }
 
-
+        alex.einzahlen(5000);
+        alex.abheben(2000);
+        alex.setDispo(200);
+        alex.ueberweisen(3200, bernd);
+        System.out.println("Alex");
+        alex.show();
+        System.out.println("Bernd");
+        bernd.show();
 
     }
 }
