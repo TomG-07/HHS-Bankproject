@@ -7,6 +7,26 @@ public class Fahrrad {
     private double geschwindigkeit;
     private double reifengroesse;
 
+    public Fahrrad() {
+    }
+
+    public Fahrrad(String marke) {
+        this(marke, 0, 0,0);
+    }
+
+
+    public Fahrrad(String marke, int gang, double geschwindigkeit, double reifengroesse) {
+        if(marke == null){
+           this.marke = "keine Marke vorhanden";
+        }else{
+            this.marke = marke;
+        }
+        this.marke = marke;
+        this.gang = gang;
+        this.geschwindigkeit = geschwindigkeit;
+        this.reifengroesse = reifengroesse;
+    }
+
     public void beschleunigen(double zunahme) {
         if (zunahme > 0 && this.geschwindigkeit >= 0) {
             this.geschwindigkeit += zunahme;

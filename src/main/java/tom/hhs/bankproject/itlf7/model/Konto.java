@@ -5,6 +5,19 @@ public class Konto {
     private double saldo;
     private double dispo;
 
+    public Konto() {
+        this(0,0);
+    }
+
+    public Konto(double saldo) {
+        this(saldo, 0);
+    }
+
+    public Konto(double saldo, double dispo) {
+        this.saldo = Math.min(saldo, 5000);
+        this.dispo = Math.min(dispo, 2 * this.saldo);
+    }
+
     public boolean abheben(double betrag) {
         if (this.saldo + this.dispo >= betrag && betrag > 0) {
             this.saldo -= betrag;
@@ -21,7 +34,7 @@ public class Konto {
 
     public boolean ueberweisen(double betrag, Konto zielKonto) {
         if (this.abheben(betrag)) {
-           zielKonto.einzahlen(betrag);
+            zielKonto.einzahlen(betrag);
             return true;
         }
         return false;

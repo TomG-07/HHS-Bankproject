@@ -1,7 +1,5 @@
 package tom.hhs.bankproject.itlf7.model;
 
-import java.util.Random;
-
 public class Schalter {
 
     public static void main(String[] args) {
@@ -34,6 +32,7 @@ public class Schalter {
         alex.show();
         System.out.println("Bernd");
         bernd.show();
+
 
     }
 }

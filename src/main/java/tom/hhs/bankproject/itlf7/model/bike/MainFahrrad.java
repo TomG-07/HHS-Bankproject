@@ -4,7 +4,10 @@ public class MainFahrrad {
 
     public static void main(String[] args) {
 
-        Fahrrad fahrrad = new Fahrrad();
+        Fahrrad fahrrad = new Fahrrad("cube", 3, 10, 5);
+        Fahrrad rad = new Fahrrad();
+        Fahrrad radel = new Fahrrad("pegasus");
+
         fahrrad.setMarke("Rose");
 
         System.out.println("Ursprüngliches Fahrrad: ");
